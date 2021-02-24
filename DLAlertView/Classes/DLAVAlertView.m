@@ -874,6 +874,9 @@ static const CGFloat DLAVAlertViewAnimationDuration = 0.3;
 - (void)keyboardWillHide:(NSNotification *)notification {
 	self.keyboardHeight = 0.0;
     
+    NSTimeInterval animationDuration;
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    
     [self updateFrameWithAnimationOfDuration:animationDuration];
 }
 
